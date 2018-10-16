@@ -1,0 +1,27 @@
+###storage-config###
+
+#NOTA: el modulo "" usa las claves de Interoperability API que la sacas de la seccion Interoperability en las opciones del Storage de GCP. Ejemplo: console.cloud.google.com/storage/settings?organizationId=26359750934&project=ricrm-stg.
+#NOTA: la documentacion dice que se deberia tomar automaticamente las env vars GS_ACCESS_KEY y GS_SECRET_ACCESS_KEY pero no lo hace por algun motivo.
+
+- 
+  name: Show storage config
+  debug:
+    msg: 
+      - "Storage '{{storage_name}}'"
+      - "Region '{{storage_region|default('-')}}'"
+      - "Directories {{storage_directories}}"
+  when: storage_directories is defined and storage_name is defined
+
+- 
+  name: Create storage if not exist and create directories
+  gc_storage:
+    bucket: "{{storage_name}}" # si no existe el bucket lo crea
+    mode: "create"
+    force: "{{storage_force|default('no')}}"
+    region: "{{storage_region|default(omit)}}" # omite el atributo si la variable es undefined
+    object: "{{item}}" # si no existe el directorio lo crea
+    gs_access_key: "{{storage_access_key}}"
+    gs_secret_key: "{{storage_secret_key}}"
+  with_items: "{{storage_directories}}"
+  when: storage_directories is defined and storage_name is defined
+
