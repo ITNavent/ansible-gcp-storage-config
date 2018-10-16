@@ -22,7 +22,7 @@ Ansible 2.4
 Role Variables
 --------------
 
-#mount-points
+```
 storage_name: name of the storage
 storage_directories: 
   - "path/of/directory/in/storage/1"
@@ -30,11 +30,11 @@ storage_directories:
   - "..."
 storage_access_key: "Access Key" of interoperability API
 storage_secret_key: "Secret Key" of interoperability API
-
+```
 
 Example Playbook
 ----------------
-
+```
 #example to create directories in a bucket
 storage_name: "ricrm-stg-bucket"
 storage_access_key: "{{lookup('env','GS_ACCESS_KEY_ID')}}"
@@ -54,7 +54,7 @@ storage_directories:
   - "/iw01/avisos/2/01"
   - "/iw01/avisos/2/09"
   - "/iw02/avisos/2/10"
-
+```
 
 
 
