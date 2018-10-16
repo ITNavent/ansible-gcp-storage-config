@@ -1,7 +1,5 @@
-Role Name
-=========
-
 ansible-gcp-config-storage
+=========
 
 Este role crea directorios dentro de un storage de GCP.
 
