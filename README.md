@@ -12,8 +12,8 @@ Las claves de la Interoperability API se pueden encontrar en la seccion "Interop
 Requirements
 ------------
 
-Ubuntu
-Ansible 2.4
+- Ubuntu
+- Ansible 2.4
 
 
 
