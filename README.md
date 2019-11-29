@@ -8,6 +8,9 @@ Actualmente no usa la autenticacion comun de GCP con el key file en formato JSON
 Las claves de la Interoperability API se pueden encontrar en la seccion "Interoperability" en las opciones de los bucket de GCP. Ejemplo: console.cloud.google.com/storage/settings?organizationId=26359750934&project=ricrm-stg
 
 
+| :warning: | WARNING: este Ansible Role fue creado con fines específicos dentro de la empresa Navent y no esta pensando para un uso general. |
+| --- | --- |
+
 
 Requirements
 ------------
